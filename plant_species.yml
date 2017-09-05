@@ -1,0 +1,66 @@
+--- !ruby/object:PlantSpecies
+name: Broccoli
+type: Cruciferous Vegetable
+months_for_planting: February, March, April
+days_to_maturity_min: 70
+days_to_maturity_max: 100
+difficulty: hard
+--- !ruby/object:PlantSpecies
+name: Celery
+type: Marshland Plant
+months_for_planting: September, October
+days_to_maturity_min: 130
+days_to_maturity_max: 140
+difficulty: hard
+--- !ruby/object:PlantSpecies
+name: Chives
+type: Perennial Herb
+months_for_planting: January, February, March, April, May, September, October, November,
+  December
+days_to_maturity_min: 55
+days_to_maturity_max: 65
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Coriander
+type: Annual Herb
+months_for_planting: April, May, June, July, September
+days_to_maturity_min: 60
+days_to_maturity_max: 75
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Lettuce
+type: Annual Plant
+months_for_planting: January, February, March, April, May, June, July, August, September,
+  October, November, December
+days_to_maturity_min: 56
+days_to_maturity_max: 84
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Onion
+type: Perennial Vegetable
+months_for_planting: February, May, June, July, August
+days_to_maturity_min: 100
+days_to_maturity_max: 120
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Oregano
+type: Perennial Herb
+months_for_planting: January, February, March, April, May
+days_to_maturity_min: 50
+days_to_maturity_max: 60
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Radish
+type: Root Vegetable
+months_for_planting: January, February, March, April, May, June, July, August, September,
+  October, November, December
+days_to_maturity_min: 35
+days_to_maturity_max: 49
+difficulty: easy
+--- !ruby/object:PlantSpecies
+name: Tomato
+type: Fruit
+months_for_planting: September, October
+days_to_maturity_min: 60
+days_to_maturity_max: 120
+difficulty: hard
