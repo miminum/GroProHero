@@ -1,0 +1,160 @@
+﻿Negative experience of gardening. My experience involved pulling out weeds,
+mowing the lawn, and sweeping up leaves.
+
+Who wants to be able to grow marajauna and opium poppies?
+
+------------
+| Problems |
+------------
+Some caused by Syntax errors e.g. missing colons
+
+some caused by typing mistakes
+
+Had trouble working with Date Class.
+Got the 'get_ maturity_date' method to work by looking through online
+documentation and trial and error.
+Eventually found what methods in Date Class to use and how to use them to get
+it to work.
+
+Had some minor problems integrating code for a progress bar from someone else.
+The problem was solved by changing names for some variable and methods, 
+adding more variables and methods and changing the way some methods worked
+
+Had problems implementing maths behind 'get_days_elapsed' method. Had infinite
+loops when I tried using 'until' for the first few times
+Tried following techniques for finding out cause of problem:
+- finding out the types of the variables used for comparisons for the loop
+- finding out the values of some variables for the loop using ‘puts’, also
+  used ‘pry’ to look at values of some variables at different points of program
+  execution
+- looked at what certain methods in the Date Class do
+- looked at what certain operators do, such as the ‘===’ and ‘<=> operators
+Tried fixing the problem using following techniques
+- converting variables from one type to another, such as from  string to integer
+  and date to string
+- the ‘<=>’ and ‘===’ operators and ‘==’ operators
+The following techniques worked:
+- Making both dates date objects
+- use the ‘===’ operator to compare dates
+- use ‘next_day’ method from date class to find next day
+
+STAR version (Situation Task Action Result)
+-------------------------------------------
+Situation:
+Write a method to find out the number of days elapsed since date you planted
+something. Problems include infinite loop, syntax errors and No Method errors.
+
+Task:
+The method is to work like this:
+Start from the date you planted your plant, keep adding one day at a time to the
+date planted until you reach today’s date while keeping track of the number of
+days you moved forward. The number of days you needed to move forward to reach
+today’s date is the number of days elapsed
+
+Action:
+This meant I had to find a way to compare 2 dates, decide what action to take
+depending on the result, and change a date.
+I had a lot of problems comparing the dates because they were different types,
+so I had to do some conversions so that I can compare 2 variables that have the
+same type.
+I also had problems moving dates forward.
+To solve my problem, I made today’s date a date type and changed the date planted 
+from a string type to a date type so that I can compare them properly.
+I used the ‘===’ operator to check if the 2 dates are equal. If they are not
+equal, the date planted will be moved to the next day using the ‘next_day’
+method from the Date class and the number of days counted will be incremented by 
+1. If the dates are equal the ‘until’ loop will stop running and the days
+counted will be returned.
+
+Result:
+The above mentioned implementation gave the expected output when I gave it
+some test data
+
+days_till_harvest method
+------------------------
+This method is similar to the days_elapsed method. Instead of starting from the 
+date planted and moving forward and counting the number of days until you reach
+today, it starts at the maturity date and moves backwards whlie counting the number of days until you reach today to find out the numberof days till harvest.
+After solving the problem of implementing the days_elapsed method, implementing
+the days_till_harvest method was much easier, as the problem of getting 2
+objects to be the same type and comparing them have been solved. Going back to
+previous days was easy as the Date class provided a method called ‘prev_day’ to
+do so.
+
+----------------
+| Changes made |
+----------------
+When integrating my plant class with the progres bar, I changed the plant class
+to give out a minimum maturity date and minimum number of days till maturity.
+This was because the progress bar took into account minimum and maximum days to
+maturity.
+When testing this version of of the plant class where today is past the minimum
+maturity date, it went into an infinite loop because it is already earlier than
+today and continues to go backwards and it will never equal today. To fix this
+infinite loop, I had to use the ‘<=>’ operator to find out if the date you are
+changing is smaller than, equal to or greater than today, and stop going back
+when today is greater than or equal to the minimum maturity date.
+I then added 2 methods to the plant class, 1 to find the maximum maturity date 
+and one to find the maximum number of days till harvest.
+
+Solution to problem
+-------------------
+Contains a database with information for a number of plants, such as days needed
+for harvesting and best months for planting.
+
+Development and technical solution
+----------------------------------
+Technical solution is a terminal program with a menu, and the following classes
+- User with following attributes:
+  - email address
+  - first name
+  - skill level
+  - an array of garden objects
+  - an array of users objects
+  the User has the following class methods:
+  - initialise to create a new user
+  - add_user to array of user objects
+  - add_garden to increase the size of the gardens array
+  - last_email to get the last user’s email address
+  - find_user_for_email to see if the user has the specified email address
+  - display_gardens_for_user to list the user’s gardens
+  - display_progress_bars_for_gardens
+
+- Garden with the following attributes:
+  - name
+  - area (in square metres)
+  - climate (for example hot and humid)
+  - location
+  - sunlight (how much sunlight you get each year)
+  - plants_planted: array of instances of the class plant
+  the Garden has the following class methods:
+  - initialise to create a new garden
+  - add_plant to add a plant to the array of plants planted
+  - list_plants (gives species name & minimum days till harvest)
+  - show_plant_progress (shows a progress bar)
+
+- Plant with the following attributes
+  - date planted
+  - plant species (an instance of the plant_species class)
+  the class has the following methods:
+  - initialization
+  - get_maturity date_min to work out earliest maturity date based on 
+    date_planted
+  - get_maturity date_max to work out latest maturity date based on 
+    date_planted
+  - get_date_elapsed (to get number of days passed since date planted)
+  - get_days_till_harvest_min to work out minimum number of days till
+    harvest based on today
+  - get_days_till_harvest_max to work out maximum number of days till
+    harvest based on today
+
+- Plant_species with the following attributes:
+  - name
+  - type
+  - months_for_planting
+  - days_to_maturity_min
+  - days_to_maturity_max
+  - difficulty (of growing that plant)
+  the class has the following method
+  - initialize
+
